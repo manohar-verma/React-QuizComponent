@@ -8,6 +8,14 @@ class Quiz extends Component{
         super(props)
         this.state={quiz_position:1}
     }
+    showNextquestion()
+    {
+        this.setState((state)=>{
+          return {
+              quiz_position: state.quiz_position+1,
+          }
+        })
+    } 
   render(){
     const isQuizEnd=this.state.quiz_position-1===quizData.quiz_questions.length
       return(
